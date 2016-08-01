@@ -1,5 +1,7 @@
 class SessionsController < Clearance::SessionsController
 
+  skip_before_action :require_login
+
   def create_from_omniauth
     auth_hash = request.env["omniauth.auth"]
 

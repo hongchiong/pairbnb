@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+
+  get "/auth/:provider/callback" => "sessions#create_from_omniauth"
+  
   get 'welcome/index'
 
   root 'welcome#index'
-
-  get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 
   resources :users, only: [:show, :edit, :update, :destroy] 
 
