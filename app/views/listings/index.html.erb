@@ -1,0 +1,15 @@
+<table class="table" id="myTable">
+	<thead>
+		<tr>
+			<th>All Listings</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @listings.each do |l| %>
+		<tr>
+			<td><%= l.title %>  <%= l.tag_list.join(",") %></td>
+		<% end %>
+		</tr>
+	</tbody>
+</table>
+<%= link_to "Add New Listings", new_listing_path %>
